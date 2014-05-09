@@ -37,5 +37,10 @@ namespace AndroidDeviceConfig
                 serializer.Serialize(stream, config);
             }
         }
+
+        public override string ToString()
+        {
+            return Vendor + " " + Name;
+        }
     }
 }
