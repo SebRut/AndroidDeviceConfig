@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidDeviceConfig", "Andr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidDeviceConfig.CliTool", "AndroidDeviceConfig.CliTool\AndroidDeviceConfig.CliTool.csproj", "{38994CF3-AB74-4F24-A1FC-8B6B18E1AF7E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidDeviceConfig.WpfTool", "AndroidDeviceConfig.WpfTool\AndroidDeviceConfig.WpfTool.csproj", "{AAB27E3A-3A23-49CB-A393-5AB8F736E17F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{38994CF3-AB74-4F24-A1FC-8B6B18E1AF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38994CF3-AB74-4F24-A1FC-8B6B18E1AF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38994CF3-AB74-4F24-A1FC-8B6B18E1AF7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAB27E3A-3A23-49CB-A393-5AB8F736E17F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAB27E3A-3A23-49CB-A393-5AB8F736E17F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAB27E3A-3A23-49CB-A393-5AB8F736E17F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAB27E3A-3A23-49CB-A393-5AB8F736E17F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

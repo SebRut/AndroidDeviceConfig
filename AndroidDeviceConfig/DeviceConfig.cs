@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -8,9 +9,9 @@ namespace AndroidDeviceConfig
     {
         static XmlSerializer serializer;
 
-        public string Name;
+        public string Name = String.Empty;
 
-        public string Vendor;
+        public string Vendor = String.Empty;
 
         public List<DeviceVersion> Versions = new List<DeviceVersion>();
 
