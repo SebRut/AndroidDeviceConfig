@@ -7,10 +7,10 @@ namespace AndroidDeviceConfig
     /// Holds a recovery with name and url
     /// </summary>
     [Serializable]
-    public struct Recovery
+    public class Recovery
     {
-        private string _Name;
-        private string _DownloadUrl;
+        private string _Name = String.Empty;
+        private string _DownloadUrl = String.Empty;
 
         /// <summary>
         /// The name of the recovery

@@ -70,7 +70,7 @@ namespace AndroidDeviceConfig
             {
                 serializer = new XmlSerializer(typeof(DeviceConfig));
             }
-            using (FileStream stream = File.OpenWrite(file))
+            using (FileStream stream = File.Create(file))
             {
                 serializer.Serialize(stream, config);
             }
