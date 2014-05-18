@@ -1,5 +1,8 @@
 ﻿namespace AndroidDeviceConfig
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public enum ActionType
     {
         FlashZip,
