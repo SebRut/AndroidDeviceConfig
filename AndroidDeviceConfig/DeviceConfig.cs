@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using System.Xml.Serialization;
 
 namespace AndroidDeviceConfig
@@ -16,6 +17,8 @@ namespace AndroidDeviceConfig
         private string _Name = String.Empty;
 
         private string _Vendor = String.Empty;
+
+        public string ADCVersion = "0.1";
 
         /// <summary>
         /// Holds the different versions of the device model available

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Input;
+using AndroidDeviceConfig.WpfTool.Models;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using Microsoft.Win32;
@@ -18,12 +19,7 @@ namespace AndroidDeviceConfig.WpfTool
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new DeviceConfigViewModel(_config);
-        }
-
-        private void CommandBinding_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
-        {
-
+            this.DataContext = new DeviceConfigModel(_config);
         }
 
         private async void OpenConfig_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -39,10 +35,10 @@ namespace AndroidDeviceConfig.WpfTool
                 try
                 {
                     _config = DeviceConfig.LoadConfig(ofd.FileName);
-                    this.DataContext = new DeviceConfigViewModel(_config);
+                    this.DataContext = new DeviceConfigModel(_config);
                     path = ofd.FileName;
                 }
-                catch
+                catch(Exception ex)
                 {
                     failure = true;
                 }
@@ -58,7 +54,7 @@ namespace AndroidDeviceConfig.WpfTool
             sfd.FileName = path;
             sfd.ShowDialog();
 
-            DeviceConfig.SaveConfig(sfd.FileName, ((DeviceConfigViewModel)DataContext).Model);
+            DeviceConfig.SaveConfig(sfd.FileName, ((DeviceConfigModel)DataContext).GetConfig());
         }
     }
 }

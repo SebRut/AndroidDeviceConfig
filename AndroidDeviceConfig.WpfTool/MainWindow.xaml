@@ -1,9 +1,11 @@
 ﻿<controls:MetroWindow x:Class="AndroidDeviceConfig.WpfTool.MainWindow"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                      xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+					  xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"  
                       xmlns:sys="clr-namespace:System;assembly=mscorlib"
+					  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:androidDeviceConfig="clr-namespace:AndroidDeviceConfig;assembly=AndroidDeviceConfig"
+                      xmlns:Models="clr-namespace:AndroidDeviceConfig.WpfTool.Models"
                       Title="ADC Tool" Height="350" Width="525">
     <Window.Resources>
         <ResourceDictionary>
@@ -69,37 +71,36 @@
                     <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Column="0" Grid.Row="0">Vendor:</Label>
-                <TextBox Text="{Binding Vendor, Mode=TwoWay}" Grid.Column="1" Grid.Row="0" />
+                <TextBox Text="{Binding Vendor}" Grid.Column="1" Grid.Row="0" />
                 <Label Grid.Column="0" Grid.Row="1">Name:</Label>
                 <TextBox Text="{Binding Name}" Grid.Column="1" Grid.Row="1" />
             </Grid>
         </TabItem>
         <TabItem Header="Versions" >
-            <TabControl>
-                <TabItem Header="Identifiers">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="2*" />
-                        </Grid.ColumnDefinitions>
-                        <ListBox Grid.Column="0" ItemsSource="{Binding Identifiers}"></ListBox>
-                        <StackPanel Grid.Column="1">
-                            <Label>Type</Label>
-                            <ComboBox ItemsSource="{Binding Source={StaticResource IdentifierTypeFromEnum}}"></ComboBox>
-                            <Label>Additional Args</Label>
-                            <RichTextBox></RichTextBox>
-                            <Button>Add</Button>
-                        </StackPanel>
-                    </Grid>
+        	<StackPanel>
+        		<ComboBox ItemsSource="{Binding Versions}"/>
+        		<TabControl Margin="0">
+        			<TabItem Header="Identifiers">
+        				<Grid>
+        					<Grid.ColumnDefinitions>
+        						<ColumnDefinition Width="*"/>
+        						<ColumnDefinition Width="2*" />
+        					</Grid.ColumnDefinitions>
+        					<ListBox x:Name="listBox" Grid.Column="0" ItemsSource="{Binding SelectedItem.Identifiers, ElementName=listBox}"/>
+        					<StackPanel Grid.Column="1">
+        						<Label Content="Type"/>
+        						<ComboBox ItemsSource="{Binding Source={StaticResource IdentifierTypeFromEnum}}"/>
+        						<Label Content="Additional Args"/>
+        						<RichTextBox/>
+        						<Button Content="Add"/>
+        					</StackPanel>
+        				</Grid>
                     
-                </TabItem>
-                <TabItem Header="Recoveries">
-                    
-                </TabItem>
-                <TabItem Header="Actions">
-                    
-                </TabItem>
-            </TabControl>
+        			</TabItem>
+        			<TabItem Header="Recoveries"/>
+        			<TabItem Header="Actions"/>
+        		</TabControl>
+        	</StackPanel>
         </TabItem>
         <TabItem Header="About" />
     </TabControl>

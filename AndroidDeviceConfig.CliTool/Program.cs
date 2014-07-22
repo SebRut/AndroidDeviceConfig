@@ -104,6 +104,7 @@ namespace AndroidDeviceConfig.CliTool
                         Action action = new Action();
                         action.Type = (ActionType) Enum.Parse(typeof(ActionType), TextInput("action type?"));
                         action.AdditionalInfos = MultiLineTextInput("additional args, seperated by ,");
+                        set.Actions.Add(action);
                         break;
                     case "2":
                         run = false;
@@ -113,6 +114,7 @@ namespace AndroidDeviceConfig.CliTool
                         break;
                 }
             }
+            
             return set;
         }
 

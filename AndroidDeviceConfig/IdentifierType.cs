@@ -6,9 +6,13 @@ namespace AndroidDeviceConfig
     public enum IdentifierType
     {
         /// <summary>
-        /// identification via codename; additional args = codename to search
+        /// identification via ro.product.name; additional args = codename to search
         /// </summary>
-        CodeName,
+        Name,
+        /// <summary>
+        /// identification via ro.product.device or ro.build.product
+        /// </summary>
+        ProductDevice,
         /// <summary>
         /// identification via OS version; additional args = OS version, format X.X.X
         /// </summary>
