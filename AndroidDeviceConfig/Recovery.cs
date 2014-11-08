@@ -11,6 +11,14 @@ namespace AndroidDeviceConfig
     {
         private string _Name = String.Empty;
         private string _DownloadUrl = String.Empty;
+        private string _Md5 = String.Empty;
+
+        [XmlAttribute]
+        public string Md5
+        {
+            get { return _Md5; }
+            set { _Md5 = value; }
+        }
 
         /// <summary>
         /// The name of the recovery

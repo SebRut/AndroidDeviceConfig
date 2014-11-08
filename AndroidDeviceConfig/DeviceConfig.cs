@@ -18,7 +18,7 @@ namespace AndroidDeviceConfig
 
         private string _Vendor = String.Empty;
 
-        public string ADCVersion = "0.1";
+        public string ADCVersion = "0.2";
 
         /// <summary>
         /// Holds the different versions of the device model available
