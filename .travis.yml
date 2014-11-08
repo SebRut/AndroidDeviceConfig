@@ -5,5 +5,5 @@ install:
  
 script:
   - xbuild CI.proj
-  - nunit-console ./src/AndroidDeviceConfig.Test/bin/Debug/AndroidDeviceConfig.Test.dll -exclude NotWorkingOnMono
+  - nunit-console ./AndroidDeviceConfig.Test/bin/Debug/AndroidDeviceConfig.Test.dll -exclude NotWorkingOnMono
 
