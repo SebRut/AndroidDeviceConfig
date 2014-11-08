@@ -29,3 +29,4 @@ _ReSharper*/
 #ignore thumbnails created by windows
 #Ignore files build by Visual Studio
 [Tt]est[Rr]esult*
+
